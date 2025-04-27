@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hành Trình Làm Chủ Tương Lai Cùng AI - Không Chỉ Học, Mà Xây Dựng Sự Nghiệp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Chuẩn bị cho con bạn đối mặt với tương lai việc làm bị AI thay đổi. Cùng chúng tôi xây dựng doanh nghiệp, không chỉ xin việc.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #d1d5db; /* text-gray-300 */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #a78bfa, #818cf8); /* purple-400 to indigo-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-text-alt {
+             background: linear-gradient(to right, #f472b6, #a78bfa); /* pink-500 to purple-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+         .card {
+            background-color: rgba(31, 41, 55, 0.6); /* Slightly more transparent bg-gray-800 */
+            backdrop-filter: blur(10px);
+            border-radius: 1rem; /* rounded-xl */
+            padding: 2.5rem; /* p-10 */
+            border: 1px solid rgba(55, 65, 81, 0.5); /* border-gray-700/50 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .card-hover {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
+        /* Enhanced Phase Connector */
+        .phase-connector {
+            position: absolute;
+            top: 60px; /* Adjusted position */
+            left: 100%;
+            width: 4rem; /* Increased width */
+            height: 2px;
+            background-color: #4b5563; /* gray-600 */
+            display: none;
+            z-index: -1; /* Ensure it's behind content if overlapping */
+        }
+        .phase-connector::after {
+            content: '';
+            position: absolute;
+            top: -5px; /* Adjusted position */
+            right: -2px; /* Adjusted position */
+            border-style: solid;
+            border-width: 6px 0 6px 10px; /* Increased size */
+            border-color: transparent transparent transparent #4b5563; /* gray-600 */
+        }
+        @media (min-width: 1024px) { /* Changed breakpoint to lg for better spacing */
+            .phase-connector {
+                display: block;
+            }
+            .phase-card { min-height: 400px; display: flex; flex-direction: column; } /* Ensure cards have similar height and allow flex-grow */
+            .phase-card ul { flex-grow: 1; } /* Make list take available space */
+        }
+        /* Enhanced Testimonial Quote Style */
+        .testimonial-quote {
+            position: relative;
+            padding-left: 3.5rem; /* Increased padding */
+            padding-top: 0.5rem;
+        }
+        .testimonial-quote::before {
+            content: "\f10d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0; /* Aligned to top */
+            font-size: 2.5rem; /* Increased size */
+            color: #4b5563; /* gray-600 */
+            opacity: 0.7;
+        }
+        /* Scrollbar Styling (Optional but nice) */
+        .scrollbar-thin { scrollbar-width: thin; scrollbar-color: #4b5563 #1f2937; }
+        .scrollbar-thin::-webkit-scrollbar { width: 8px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background: #1f2937; border-radius: 4px;}
+        .scrollbar-thin::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 4px; border: 2px solid #1f2937; }
+
+        /* Hero Background Placeholder */
+        .hero-bg {
+            /* Optional: Replace with your background image */
+            /* background-image: url('hero-background.jpg'); */
+            background-color: #111827; /* Fallback background */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 0;
+        }
+        .hero-bg::before { /* Overlay */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+             /* Slightly darker overlay */
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(17, 24, 39, 0.9) 100%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased scrollbar-thin">
+
+    <!-- Hero Section -->
+    <section class="relative hero-bg text-center py-24 md:py-32 lg:py-40 px-6">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-relaxed text-white">
+                Tương lai việc làm <span class="gradient-text">đã thay đổi</span>. Con bạn đã sẵn sàng?
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                AI đang định hình lại thế giới với tốc độ chóng mặt. Đừng để con bạn bị bỏ lại phía sau trong cuộc đua việc làm khắc nghiệt
+            </p>
+            <a href="#cta" class="mt-10 inline-block bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-base">
+                Khám phá giải pháp ngay!
+            </a>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto p-6 md:p-10 space-y-16 md:space-y-24">
+
+        <!-- Section: The Looming Challenge -->
+        <section>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Thực tế khốc liệt của thị trường việc làm</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="text-left">
+                    <h3 class="text-2xl font-semibold gradient-text-alt mb-4">Nguy cơ thất nghiệp hàng loạt hiện hữu</h3>
+                    <p class="text-lg mb-4 text-gray-300">
+                        Trong <span class="font-semibold text-red-400">5-10 năm tới</span>, AI có thể thay thế đến <span class="font-semibold text-red-400">80% công việc văn phòng</span>. Chỉ có 20% nhân sự biết dùng AI thành thạo mới có thể trụ lại mà thôi
+                    </p>
+                    <p class="text-lg text-yellow-300 mb-6">
+                        Đây không phải dự báo xa xôi. <span class="font-semibold">Nó đã diễn ra NGAY HÔM NAY RỒI!</span>
+                    </p>
+                    <blockquote class="mt-6 border-l-4 border-blue-500 pl-4 italic text-gray-400 text-md bg-gray-800/50 p-4 rounded-r-lg shadow-inner">
+                         “Nếu muốn tuyển thêm người cho team của bạn, hãy chứng minh rằng AI không thể làm được việc đó”<br>
+                         <span class="text-gray-500 not-italic block mt-2 text-sm">– Tobi Lütke, CEO Shopify gửi cho toàn thể nhân viên qua một email nội bộ, ngày 7 tháng 4 năm 2025)</span>
+                    </blockquote>
+                    <p class="text-gray-400 mt-4 text-sm">
+                         Tuyên bố này báo hiệu một kỷ nguyên hoàn toàn mới
+                    </p>
+                </div>
+                 <div class="text-center">
+                    <img src="k-shaped.png" alt="Biểu đồ nền kinh tế hình chữ K do AI" class="rounded-lg shadow-xl mx-auto w-full max-w-md h-auto border-2 border-gray-700">
+                    <p class="text-sm text-gray-500 mt-3">Minh họa: Nền kinh tế phân cực hình chữ K do AI tạo ra</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16 pt-12 border-t border-gray-700/50">
+                 <div class="text-center md:order-2">
+                     <img src="cost.png" alt="Chi phí tạo ra sản phẩm giảm mạnh nhờ AI" class="rounded-lg shadow-xl mx-auto w-full max-w-xl h-auto border-2 border-gray-700">
+                     <p class="text-sm text-gray-500 mt-3">AI giúp giảm đáng kể chi phí tạo ra sản phẩm và dịch vụ.</p>
+                 </div>
+                 <div class="text-left md:order-1">
+                    <h3 class="text-2xl font-semibold gradient-text-alt mb-4">Kể cả có việc làm, thu nhập cũng sẽ không cao</h3>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Để lọt vào top 20% đã khó, nhưng vậy vẫn là chưa đủ!
+                    </p>
+                    <p class="text-lg text-gray-300 mb-4">
+                        AI sẽ làm <span class="font-semibold text-yellow-300">chi phí sản xuất sụt giảm đáng kể</span>, khiến cho thị trường tràn ngập các sản phẩm chức năng chẳng khác gì nhau, với giá gần như bằng 0
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Chưa hết, với việc trợ lý AI phổ cập, khách hàng có thể tiếp cận cả ngàn sản phẩm, dịch vụ chỉ trong vài phút. Và những lợi thế cạnh tranh hiện tại như cách làm content viral hay biết cách chạy ads cũng sẽ bị AI sao chép chỉ với một prompt
+                    </p>		
+                    <p class="text-xl text-red-400 font-semibold mb-4">
+                       Hệ quả: Ngay cả khi con bạn thành thạo AI, lương bổng của chúng chưa chắc đã cao, trong khi áp lực công việc sẽ <span class="font-bold">vô cùng lớn</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Section: A Better Path Forward -->
+    <section class="text-center py-16 md:py-20">
+        <h2 class="text-2xl md:text-3xl font-semibold gradient-text mb-4">Vậy liệu có lối ra nào cho con tôi không?</h2>
+        <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Một cách rõ ràng, bền vững và chắc chắn?</p>
+
+        <div class="max-w-3xl mx-auto text-left border-t-2 border-indigo-700/50 pt-10">
+
+            <!-- The Positive Answer -->
+            <p class="text-xl font-semibold text-center text-green-300 mb-6">
+                 Câu trả lời là CÓ!
+            </p>
+
+            <!-- What it ISN'T -->
+            <div class="text-center mb-10">
+                <p class="text-lg text-gray-400 mb-2 leading-relaxed">
+                    Và nó <span class="font-semibold text-red-400 underline decoration-wavy decoration-red-500/50">không phải</span> là một giải pháp chắp vá, ngắn hạn như một khóa học về AI, STEM, kỹ năng mềm... hay vài buổi workshop đơn lẻ
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- Section: Introducing Our Solution -->
+         <section class="card bg-gradient-to-br from-gray-800 to-gray-900 border-indigo-600/50">
+             <h2 class="text-2xl md:text-3xl font-bold text-center gradient-text mb-4">Thay vì phải đi vất vả xin việc, hãy cùng tạo ra việc làm</h2>
+             <p class="text-center text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                 Hãy cùng tạo ra một <span class="font-semibold text-indigo-300">hệ thống công ty </span> đa ngành, nơi bạn và con bạn thực sự làm chủ, sở hữu cổ phần, nắm quyền quyết định
+             </p>
+             <div class="grid md:grid-cols-3 gap-8 text-center">
+                 <div class="border-t-4 border-cyan-500 pt-6">
+                     <i class="fas fa-cogs text-4xl text-cyan-400 mb-4"></i>
+                     <h3 class="font-bold text-xl mb-2 text-cyan-300">Học để tự mình làm chủ, không phải để thi</h3>
+                     <p class="text-gray-400 leading-relaxed text-sm">Con bạn không học để có tấm bằng để đi xin việc. Ở đây, con bạn học để biết mình mạnh ở đâu, thị trường cần gì, xây dựng sản phẩm ra sao, điều hành doanh nghiệp thế nào, từ khi còn nhỏ
+					 </p>
+                 </div>
+                 <div class="border-t-4 border-purple-500 pt-6">
+                     <i class="fas fa-users-cog text-4xl text-purple-400 mb-4"></i>
+                     <h3 class="font-bold text-xl mb-2 text-purple-300">Cha mẹ đồng hành cùng con xây dựng doanh nghiệp</h3>
+                     <p class="text-gray-400 leading-relaxed text-sm">Tại đây, phụ huynh không chỉ là người đóng tiền để con đi học, họ còn gợi ý nhu cầu, ủng hộ sản phẩm, tham gia cố vấn, cùng nhau góp tiền để xây doanh nghiệp mà con cái họ làm chủ sau này</p>
+                 </div>
+                 <div class="border-t-4 border-yellow-500 pt-6">
+                     <i class="fas fa-shield-alt text-4xl text-yellow-400 mb-4"></i>
+                     <h3 class="font-bold text-xl mb-2 text-yellow-300">Khởi nghiệp nhẹ nhàng, cổ phần chắc chắn</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm"> Không cần vốn lớn, không phải một mình cân tất. Ở đây, khách hàng có sẵn, có nhóm cùng làm. Chưa kể, con bạn là cổ đông chính, không ai ép buộc, làm việc "chill" hơn, nhưng lại sở hữu cổ phần thật </p>
+                 </div>
+             </div>
+         </section>
+
+        <!-- Simple Path Summary -->
+        <section class="text-center py-8">
+             <h3 class="text-xl font-semibold text-gray-300 mb-2">Tóm lại, hành trình của con sẽ là</h3>
+             <p class="text-3xl md:text-4xl text-indigo-300 mt-3 font-bold tracking-wide">
+                Học <i class="fas fa-arrow-right mx-3 text-xl text-gray-500"></i> Tạo giá trị <i class="fas fa-arrow-right mx-3 text-xl text-gray-500"></i> Sở hữu giá trị tạo ra
+             </p>
+        </section>
+
+        <!-- Detailed Roadmap -->
+        <section class="space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Lộ trình cụ thể</h2>
+            <div class="relative flex flex-col lg:flex-row justify-between items-stretch lg:space-x-8 space-y-12 lg:space-y-0 px-4">
+                 <!-- Phase 1: Học -->
+                 <div class="relative flex-1 w-full bg-gray-800 rounded-xl shadow-lg p-8 border-t-4 border-blue-600 text-center phase-card card-hover">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">GIAI ĐOẠN 1</div>
+                    <i class="fas fa-brain text-5xl text-blue-400 mt-8 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-5">Học</h3>
+                    <ul class="list-disc list-inside text-left space-y-2 text-sm text-gray-400 mt-2 leading-relaxed">
+                        <li>Học cách <span class="font-semibold text-blue-300">sử dụng AI</span> hiệu quả</li>
+                        <li>Khám phá <span class="font-semibold text-blue-300">điểm mạnh</span> bản thân</li>
+                        <li>Nhận diện <span class="font-semibold text-blue-300">nhu cầu</span> của thị trường </li>
+                        <li>Rèn luyện <span class="font-semibold text-blue-300">kỹ năng mềm</span> thiết yếu (Giao tiếp, Phản biện, Hợp tác, Sáng tạo)</li>
+                        <li>Thực hành qua <span class="font-semibold text-blue-300">các yêu cầu</span> từ cộng đồng</li>
+                        <li>Hiểu về <span class="font-semibold text-blue-300">cạnh tranh và tăng trưởng</span></li>
+                        <li>Làm quen với <span class="font-semibold text-blue-300">quản trị và lãnh đạo</span></li>
+                    </ul>
+                    <div class="phase-connector"></div>
+                </div>
+
+                <!-- Phase 2: Xây Dựng -->
+                <div class="relative flex-1 w-full bg-gray-800 rounded-xl shadow-lg p-8 border-t-4 border-yellow-600 text-center phase-card card-hover">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">GIAI ĐOẠN 2</div>
+                    <i class="fas fa-lightbulb text-5xl text-yellow-400 mt-8 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-5">Xây dựng</h3>
+                     <ul class="list-disc list-inside text-left space-y-2 text-sm text-gray-400 mt-2 leading-relaxed">
+                        <li><span class="font-semibold text-yellow-300">Thử nghiệm nhanh </span> trên nhiều ý tưởng</li>
+                        <li>Xây dựng <span class="font-semibold text-yellow-300"> sản phẩm mẫu </span></li>
+                        <li>Học cách <span class="font-semibold text-yellow-300">làm việc nhóm </span> và <span class="font-semibold text-yellow-300">phân chia công việc</span> hiệu quả</li>
+                        <li>Thực hành <span class="font-semibold text-yellow-300">quản lý dự án</span> và đặt mục tiêu </li>
+                        <li>Thu thập <span class="font-semibold text-yellow-300">phản hồi</span> và cải tiến sản phẩm</li>
+                        <li><span class="font-semibold text-yellow-300">Trình bày dự án</span> trước cộng đồng </li>
+                    </ul>
+                    <div class="phase-connector"></div>
+                </div>
+
+                 <!-- Phase 3: Sở hữu -->
+                 <div class="relative flex-1 w-full bg-gray-800 rounded-xl shadow-lg p-8 border-t-4 border-green-600 text-center phase-card card-hover">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">GIAI ĐOẠN 3</div>
+                    <i class="fas fa-handshake text-5xl text-green-400 mt-8 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-5">Sở hữu</h3>
+                    <ul class="list-disc list-inside text-left space-y-2 text-sm text-gray-400 mt-2 leading-relaxed">
+                        <li><span class="font-semibold text-green-300">Kêu gọi vốn</span> từ cộng đồng</li>
+                        <li>Thành lập <span class="font-semibold text-green-300">công ty con</span> trong hệ sinh thái</li>
+                        <li>Trở thành <span class="font-semibold text-green-300">cổ đông</span>, nhận <span class="font-semibold text-green-300">cổ phần</span></li>
+                        <li>Học cách <span class="font-semibold text-green-300">quản lý tài chính</span> </li>
+                        <li>Tìm hiểu thêm về <span class="font-semibold text-green-300">pháp lý</span> doanh nghiệp </li>
+                        <li>Học về <span class="font-semibold text-green-300">vận hành và tăng trưởng</span> hệ thống</li>
+                    </ul>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Project Examples Section -->
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-white mb-4">Yêu cầu thực tế từ cộng đồng</h2>
+            <p class="text-center text-gray-400 mb-10 max-w-2xl mx-auto">
+                Đây là một số ý tưởng và yêu cầu đang được cộng đồng quan tâm và bình chọn nhiều nhất, sẵn sàng để các nhóm bắt tay vào thực hiện
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+
+                <!-- Project 1 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-blue-500/50">
+                    <i class="fas fa-microphone-alt text-xl text-blue-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-blue-300 mb-1">App luyện nói Tiếng Anh cùng AI</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Dùng AI nhận diện giọng nói, sửa lỗi phát âm, tạo hội thoại tự nhiên</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-green-500/50">
+                    <i class="fas fa-shield-alt text-xl text-green-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-green-300 mb-1">App giám sát việc dùng điện thoại</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Giúp phụ huynh quản lý thời gian dùng app của trẻ nhỏ hiệu quả hơn</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-purple-500/50">
+                    <i class="fas fa-gamepad text-xl text-purple-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-purple-300 mb-1">Tạo mod cho game yêu thích</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Học cách làm game thông qua việc tạo ra bản mod cho các tựa game ưa thích</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-amber-500/50">
+                    <i class="fas fa-book-open text-xl text-amber-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-amber-300 mb-1">Phát triển tính năng Voting cộng đồng</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Phát triển thử một tính năng nằm trong roadmap hiện tại: Nghiên cứu, đề xuất phương án, đánh giá lợi hại, tính cách triển khai...</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-teal-500/50">
+                    <i class="fas fa-search text-xl text-teal-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-teal-300 mb-1">Nghiên cứu: Cách học từ vựng tối ưu</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Khảo sát, phân tích dữ liệu để tìm phương pháp học từ vựng hiệu quả nhất cho trẻ nhỏ</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-pink-500/50">
+                    <i class="fas fa-share-alt text-xl text-pink-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-pink-300 mb-1">Tìm cách tăng trưởng cho cộng đồng</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Sáng tạo nội dung, thử kênh quảng bá để thu hút thêm phụ huynh cho cộng đồng</p>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-lime-500/50">
+                    <i class="fas fa-envelope-open-text text-xl text-lime-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lime-300 mb-1">Công cụ AI đề xuất nội dung nên đọc</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Giúp phụ huynh nắm bắt nhanh nội dung nên đọc từ email, các tài khoản đang follow trên mạng xã hội, newsletter đã đăng ký...</p>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="flex items-start gap-4 p-5 bg-gray-700/40 rounded-lg border border-gray-600/50 transition-shadow hover:shadow-md hover:border-sky-500/50">
+                    <i class="fas fa-baby-carriage text-xl text-sky-400 mt-1 w-6 text-center flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-sky-300 mb-1">Thử nghiệm dịch vụ đưa đón trẻ</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Nghiên cứu, khảo sát nhu cầu, thu thập các lo ngại chính, lên thử giải pháp cho một dịch vụ đưa đón trẻ nhỏ sau giờ học, giải quyết nhu cầu cấp thiết của các phụ huynh có con nhỏ</p>
+                    </div>
+                </div>
+
+            </div>
+             <p class="text-center text-gray-500 text-sm mt-8">... và rất nhiều ý tưởng khác nữa!</p>
+        </section>
+
+        <!-- Learning Ecosystem Section -->
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-white mb-10">Cách thức học tập mới lạ</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left text-sm">
+                <!-- Column 1 -->
+                <div class="space-y-6 md:pr-4 lg:pr-8 md:border-r md:border-gray-700/50">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-users w-6 text-lg text-teal-400 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold text-teal-300 mb-1">Học theo nhóm chuyên môn</h4>
+                            <p class="text-gray-400 leading-relaxed">Phân nhóm theo kỹ năng (Tech, Design, Marketing, Crafting...) và tham gia dự án thực tế tùy theo nhóm mình chọn</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                         <i class="fas fa-lightbulb w-6 text-lg text-yellow-400 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold text-yellow-300 mb-1">Thực hành trên dự án thực tế</h4>
+                            <p class="text-gray-400 leading-relaxed">Luôn luôn bắt đầu từ vấn đề và nhu cầu thực tế của thị trường. Trẻ được khuyến khích thử nghiệm nhanh để tìm ra đam mê và cách tạo giá trị hiệu quả nhất</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Column 2 -->
+                <div class="space-y-6 md:px-4 lg:px-8 md:border-r md:border-gray-700/50">
+                     <div class="flex items-start gap-4">
+                         <i class="fas fa-globe w-6 text-lg text-cyan-400 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold text-cyan-300 mb-1">Tiếp xúc chuyên gia đa ngành</h4>
+                            <p class="text-gray-400 leading-relaxed">Thông qua các buổi talkshow online và workshop offline định kỳ, trẻ và phụ huynh được gặp gỡ từ các chuyên gia đang làm trực tiếp trong lĩnh vực mà trẻ quan tâm</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-project-diagram w-6 text-lg text-purple-400 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold text-purple-300 mb-1">Học linh hoạt giữa online và offline</h4>
+                            <p class="text-gray-400 leading-relaxed">Kết hợp học online và các buổi offline thực hành để tăng cường gắn kết và trải nghiệm thực tế</p>
+                        </div>
+                    </div>
+
+                </div>
+                 <!-- Column 3 -->
+                <div class="space-y-6 md:pl-4 lg:pl-8">
+                    <div class="flex items-start gap-4">
+                         <i class="fas fa-graduation-cap w-6 text-lg text-amber-400 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold text-amber-300 mb-1">Học đa độ tuổi (10-16)</h4>
+                            <p class="text-gray-400 leading-relaxed">Giống với cách học truyền nghề của thời xa xưa. Trẻ nhỏ học nhanh hơn từ việc quan sát và làm cùng các anh chị, trẻ lớn rèn luyện kỹ năng dẫn dắt và lãnh đạo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="card bg-gray-800/70">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-white mb-10">Phụ Huynh Chia Sẻ</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="testimonial-quote text-gray-300 italic leading-relaxed">
+                    "Con tôi từ nhút nhát giờ tự tin trình bày ý tưởng app trước đám đông. Quan trọng hơn là cháu hiểu niềm vui khi tạo ra thứ người khác cần và thấy rõ con đường sự nghiệp không chỉ là đi xin việc."
+                    <p class="not-italic text-sm text-indigo-300 font-semibold mt-4">- Anh Nam, Ba của Gia Bảo (13 tuổi)</p>
+                </div>
+                 <div class="testimonial-quote text-gray-300 italic leading-relaxed">
+                    "Mô hình này rất thực tế. Mình không chỉ đóng tiền mà còn tham gia góp ý, là khách hàng đầu tiên, thậm chí góp vốn nhỏ. Thấy rõ con trưởng thành, hiểu về kinh doanh qua từng dự án."
+                    <p class="not-italic text-sm text-indigo-300 font-semibold mt-4">- Chị Hoa, Mẹ của Minh Anh (15 tuổi)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-900 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center border border-purple-700/50">
+          <h2 class="text-3xl md:text-4xl font-bold mb-5">Đầu Tư Cho Tương Lai Chủ Động Của Con</h2>
+          <p class="text-indigo-200 text-lg mb-8 max-w-3xl mx-auto">
+              Thay vì lo lắng con vật lộn kiếm việc, hãy cùng chúng tôi xây dựng nền tảng để con <span class="font-semibold text-white">làm chủ tương lai</span>. Chỉ với <span class="font-bold text-yellow-300 text-xl">300.000 VNĐ/tháng</span>, bạn không chỉ đầu tư cho con, mà còn trở thành <span class="font-semibold text-white">cổ đông sáng lập</span>, cùng định hướng và hưởng lợi từ sự phát triển của cộng đồng.
+          </p>
+          <button onclick="alert('Chuyển đến trang đăng ký!')" class="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-bold px-10 py-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg">
+             Tham Gia Ngay Hôm Nay!
+          </button>
+           <p class="mt-5 text-xs text-indigo-300 opacity-80">
+               (Cam kết sao kê minh bạch tài chính 100% hàng tháng. Hoàn tiền 100% trong vòng một tuần đầu)
+           </p>
+        </section>
+
+        <!-- Footer (Simple) -->
+        <footer class="text-center py-8 mt-12 text-gray-500 text-sm border-t border-gray-700/50">
+            © 2024 Cộng Đồng [Tên Của Bạn]. All rights reserved. <!-- <<< RENAME HERE -->
+            <p class="mt-2">Liên hệ: <a href="mailto:youremail@example.com" class="hover:text-indigo-400">youremail@example.com</a> | <a href="tel:+84123456789" class="hover:text-indigo-400">0123 456 789</a></p> <!-- <<< ADD CONTACT INFO HERE -->
+        </footer>
+
+    </div>
+</body>
+</html>
